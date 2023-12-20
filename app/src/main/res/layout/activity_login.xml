@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="@drawable/shape_toolbar01"
+        android:backgroundTint="@color/black"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -90,12 +91,15 @@
             android:layout_marginTop="10dp"
             android:gravity="right"
             android:text="@string/link_forgotpass_login"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
         <Button
             android:id="@+id/btnLoguearse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
             android:layout_marginTop="15dp"
             android:text="@string/btn_login_login" />
 
@@ -106,6 +110,8 @@
             android:layout_marginTop="250dp"
             android:gravity="center"
             android:text="@string/link_login_register"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:textSize="15sp" />
 
     </LinearLayout>

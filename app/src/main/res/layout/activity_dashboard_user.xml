@@ -12,7 +12,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@drawable/shape_toolbar02"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -28,7 +27,9 @@
                 android:layout_gravity=""
                 android:gravity="center"
                 android:text="@string/tv_subt_dashboard_user"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textStyle="bold"
                 android:textSize="18sp" />
 
             <TextView
@@ -38,7 +39,8 @@
                 android:gravity="center"
                 android:paddingLeft="35dp"
                 android:text="@string/tv_email_example_dashboardUser"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -67,13 +69,21 @@
         android:orientation="horizontal">
 
         <TextView
+            android:layout_margin="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="18sp"
             android:text="Results"/>
 
         <TextView
+            android:id="@+id/cant_results"
+            android:layout_margin="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textSize="18sp"
+            android:text="0"/>
 
     </LinearLayout>
 

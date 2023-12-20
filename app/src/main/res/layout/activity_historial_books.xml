@@ -15,6 +15,7 @@
         android:layout_height="?actionBarSize"
         android:background="@drawable/shape_toolbar02"
         android:gravity="center"
+        android:backgroundTint="@color/trasparent"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -24,12 +25,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="296dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity=""
                 android:gravity="center"
                 android:text="@string/tv_subt_dashboard_user"
-                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <TextView
@@ -39,7 +41,8 @@
                 android:gravity="center"
                 android:paddingLeft="35dp"
                 android:text="@string/tv_email_example_dashboardUser"
-                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -76,6 +79,7 @@
             android:gravity="center">
 
             <androidx.appcompat.widget.SearchView
+                android:id="@+id/historyBook"
                 android:layout_width="276dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -85,6 +89,7 @@
                 android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
                 android:text="Search"/>
 
         </LinearLayout>

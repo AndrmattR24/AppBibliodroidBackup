@@ -29,56 +29,5 @@
         android:tooltipText="Change Profile Image"
         />
 
-    <LinearLayout
-        android:layout_marginTop="60dp"
-        android:padding="10dp"
-        android:gravity="end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username : "
-            android:textSize="18sp"/>
-
-        <EditText
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Matti"
-            android:editable="false"
-            android:background="#000f"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:padding="10dp"
-        android:gravity="end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password : "
-            android:textSize="18sp"/>
-
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#000f"
-            android:editable="false"
-            android:inputType="textPassword"
-            android:text="Matti"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
 
 </LinearLayout>

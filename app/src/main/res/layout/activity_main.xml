@@ -23,6 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-condensed-light"
         android:textSize="28sp"
         android:textStyle="bold" />
 
@@ -33,6 +35,7 @@
         android:textSize="18sp"
         android:padding="15dp"
         android:backgroundTint="@color/black"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/textLogin"/>
 
     <Button
@@ -42,6 +45,7 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:padding="15dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:backgroundTint="@color/black"
         android:text="@string/textRegister"/>
 
