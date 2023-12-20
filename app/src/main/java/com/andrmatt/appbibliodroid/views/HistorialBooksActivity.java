@@ -5,6 +5,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.util.Log;
@@ -57,6 +58,7 @@ public class HistorialBooksActivity extends AppCompatActivity {
         @Override
         public boolean onQueryTextSubmit(String query) {
             Toast.makeText(HistorialBooksActivity.this, "maldito chivo :v", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(HistorialBooksActivity.this, DashboardUserActivity.class));
             return false;
         }
 
