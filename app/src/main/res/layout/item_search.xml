@@ -15,17 +15,19 @@
             android:id="@+id/txtHBook"
             android:layout_width="280dp"
             android:layout_height="match_parent"
-            android:gravity="center|left"
-            android:text="Harry Pooter"
             android:layout_marginRight="40dp"
             android:fontFamily="sans-serif-condensed-light"
-            android:textSize="18sp"/>
+            android:gravity="center|left"
+            android:text="Harry Pooter"
+            android:textColor="#37474f"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/touchDelete"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/icon_delete"/>
+            android:src="@drawable/icon_delete" />
 
     </LinearLayout>
 

@@ -80,17 +80,12 @@
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/historyBook"
-                android:layout_width="265dp"
+                android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="Search Book"/>
-
-            <Button
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/black"
-                android:text="Search"/>
+                android:background="#ffffff"
+                android:foregroundTint="#263238"
+                android:hint="Search Book" />
 
         </LinearLayout>
 
@@ -108,7 +103,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSearches"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="530dp"
             android:layout_margin="10dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_search">
