@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.andrmatt.appbibliodroid.R;
 import com.andrmatt.appbibliodroid.databinding.ActivityHistorialBooksBinding;
@@ -34,6 +35,13 @@ public class HistorialBooksActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         recyclerView = findViewById(R.id.rvSearches);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        
+        binding.btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HistorialBooksActivity.this, "Hans es chivo", Toast.LENGTH_SHORT).show();
+            }
+        });        
     }
 
     private void showSearches() {
