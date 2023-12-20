@@ -1,14 +1,15 @@
 package com.andrmatt.appbibliodroid.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.andrmatt.appbibliodroid.R;
@@ -35,13 +36,19 @@ public class HistorialBooksActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         recyclerView = findViewById(R.id.rvSearches);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        
-        binding.btnSearch.setOnClickListener(new View.OnClickListener() {
+
+        binding.enterSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(HistorialBooksActivity.this, "Hans es chivo", Toast.LENGTH_SHORT).show();
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(HistorialBooksActivity.this, "maldito chivo :v", Toast.LENGTH_SHORT).show();
+                return true;
             }
-        });        
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
     }
 
     private void showSearches() {
