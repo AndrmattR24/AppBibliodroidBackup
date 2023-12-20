@@ -5,4 +5,5 @@
     <color name="purple_700">#340A70</color>
     <color name="cyan">#009688</color>
     <color name="gray01">#cccccc</color>
+    <color name="trasparent">#000f</color>
 </resources>
