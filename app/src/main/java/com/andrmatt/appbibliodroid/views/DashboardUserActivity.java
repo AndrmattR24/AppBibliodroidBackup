@@ -4,38 +4,39 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.andrmatt.appbibliodroid.R;
 import com.andrmatt.appbibliodroid.databinding.ActivityDashboardUserBinding;
-import com.andrmatt.appbibliodroid.databinding.ActivityLoginBinding;
-import com.andrmatt.appbibliodroid.models.adapters.AdapterBook;
+import com.andrmatt.appbibliodroid.models.adapters.BookAdapter;
 import com.andrmatt.appbibliodroid.models.dto.BookResponse;
 import com.andrmatt.appbibliodroid.service.ApiBook;
+import com.andrmatt.appbibliodroid.service.ApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
+import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DashboardUserActivity extends AppCompatActivity {
 
     //viewBinding
     private ActivityDashboardUserBinding _binding;
-    private List<BookResponse.Datos> books;
-    private AdapterBook adapterBookK;
-    private BookResponse bookResponse;
-
+    private List<BookResponse.BookItem> books;
+    private RecyclerView recyclerView;
+    private BookAdapter bookAdapter;
     private FirebaseAuth auth;
 
     @Override
@@ -45,10 +46,11 @@ public class DashboardUserActivity extends AppCompatActivity {
         setContentView(_binding.getRoot());
 
         auth = FirebaseAuth.getInstance();
-
-        loadData();
         checkuser();
 
+        recyclerView = findViewById(R.id.rvFavorites);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        showBooks();
 
         //Evaluate On Click ImgLogout
         _binding.ivBtnLogoutUserDashboardUser.setOnClickListener(new View.OnClickListener() {
@@ -82,51 +84,26 @@ public class DashboardUserActivity extends AppCompatActivity {
         });
     }
 
-    private void loadData() {
-        Thread thread = new Thread(
-                ()->{
-                    try{
-                        Response<List<BookResponse>> ApiResponse = getRetrofit()
-                                .create(ApiBook.class). listBooks().execute();
-                        bookResponse = (BookResponse) ApiResponse.body();
-                        runOnUiThread(
-                                () ->{
-                                    if(bookResponse != null){
-                                        showList(bookResponse);
-                                    }else{
-                                        Toast.makeText(this,"No se Hallaron Libros",Toast.LENGTH_SHORT).show();
-                                    };
-                                }
-                        );
-                    }catch (Exception e){
-
-                    }
+    private void showBooks() {
+        Call<BookResponse> call = ApiClient.getClient().create(ApiBook.class).listBooks();
+        call.enqueue(new Callback<BookResponse>() {
+            @Override
+            public void onResponse(Call<BookResponse> call, Response<BookResponse> response) {
+                if (response.isSuccessful()) {
+                    books = response.body().data;
+                    bookAdapter = new BookAdapter(books, getApplicationContext());
+                    recyclerView.setAdapter(bookAdapter);
                 }
-        );
-        thread.start();
+            }
+
+            @Override
+            public void onFailure(Call<BookResponse> call, Throwable t) {
+                Log.i("test", "err " + t.getLocalizedMessage());
+                Toast.makeText(DashboardUserActivity.this, "Error de Conexión", Toast.LENGTH_SHORT);
+            }
+        });
     }
 
-    private void showList(BookResponse bookResponse) {
-        if(bookResponse.getData().size() > 0){
-          books = bookResponse.getData();
-        }
-
-        adapterBookK = new AdapterBook(books);
-        _binding.rvFavorites.setHasFixedSize(true);
-        _binding.rvFavorites.setLayoutManager(new LinearLayoutManager(this));
-        _binding.rvFavorites.setAdapter(adapterBookK);
-    }
-
-    private Retrofit getRetrofit() {
-        return new Retrofit.Builder()
-                .baseUrl("https://books.unu-planilla.com/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(getClienteRetrofit()).build();
-    }
-
-    private OkHttpClient getClienteRetrofit() {
-        return new OkHttpClient.Builder().build();
-    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
