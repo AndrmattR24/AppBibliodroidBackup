@@ -53,7 +53,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         }
         //user Logged
         else{
-            startActivity(new Intent(SplashScreenActivity.this, DashboardUserActivity.class));
+            startActivity(new Intent(SplashScreenActivity.this, HistorialBooksActivity.class));
             finish();
         }
     }

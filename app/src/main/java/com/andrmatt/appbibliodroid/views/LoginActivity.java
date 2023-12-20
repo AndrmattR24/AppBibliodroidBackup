@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         //user Logged
         else{
-            startActivity(new Intent(LoginActivity.this, DashboardUserActivity.class));
+            startActivity(new Intent(LoginActivity.this, HistorialBooksActivity.class));
             finish();
         }
     }
