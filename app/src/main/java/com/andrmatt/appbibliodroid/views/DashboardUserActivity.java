@@ -59,11 +59,13 @@ public class DashboardUserActivity extends LocalGuardActivity implements LocalGu
     }
 
     private void showBooks() {
-        Call<BookResponse> call = ApiClient.getClient().create(ApiBook.class).listBooks();
+        String querySearch = getIntent().getExtras().getString("querySearch");
+        Call<BookResponse> call = ApiClient.getClient().create(ApiBook.class).listBooks(querySearch);
         call.enqueue(new Callback<BookResponse>() {
             @Override
             public void onResponse(Call<BookResponse> call, Response<BookResponse> response) {
                 if (response.isSuccessful()) {
+                    _binding.cantResults.setText(String.valueOf(response.body().meta.pagination.getTotal()));
                     books = response.body().data;
                     bookAdapter = new BookAdapter(books, getApplicationContext());
                     recyclerView.setAdapter(bookAdapter);

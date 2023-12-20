@@ -60,7 +60,9 @@ public class HistorialBooksActivity extends LocalGuardActivity implements LocalG
         public boolean onQueryTextSubmit(String query) {
             SearchEntity search = new SearchEntity(query, localGuard.getUser().getUid());
             searchRepository.insertSearch(search);
-            startActivity(new Intent(HistorialBooksActivity.this, DashboardUserActivity.class));
+            Intent intent = new Intent(HistorialBooksActivity.this, DashboardUserActivity.class);
+            intent.putExtra("querySearch", search.getContent());
+            startActivity(intent);
             showSearches();
             return false;
         }
