@@ -8,6 +8,7 @@ import java.util.UUID;
 
 @Entity(tableName = "searches")
 public class SearchEntity {
+
     @PrimaryKey
     @NonNull
     private String id;
@@ -18,8 +19,10 @@ public class SearchEntity {
     @ColumnInfo(name = "userId")
     private String userId;
 
-    public SearchEntity() {
-        id = UUID.randomUUID().toString();
+    public SearchEntity(String content, String userId) {
+        this.id = UUID.randomUUID().toString();
+        this.content = content;
+        this.userId = userId;
     }
 
     @NonNull
