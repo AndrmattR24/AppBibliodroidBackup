@@ -1,23 +1,15 @@
 package com.andrmatt.appbibliodroid.models.adapters;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.andrmatt.appbibliodroid.R;
 import com.andrmatt.appbibliodroid.databinding.ItemBooksBinding;
 import com.andrmatt.appbibliodroid.models.dto.BookResponse;
 import com.squareup.picasso.Picasso;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
