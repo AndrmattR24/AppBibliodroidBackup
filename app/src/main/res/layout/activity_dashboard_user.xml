@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_backgroundapp"
+    tools:context=".views.DashboardUserActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/shape_toolbar02"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity=""
+                android:gravity="center"
+                android:text="@string/tv_subt_dashboard_user"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="35dp"
+                android:text="@string/tv_email_example_dashboardUser"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_btnLogoutUser_dashboardUser"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:tooltipText="Logout"
+            android:src="@drawable/icon_logout" />
+
+        <ImageView
+            android:id="@+id/iv_btnProfile_dashboardUser"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:tooltipText="Profile"
+            android:src="@drawable/icon_person" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_books">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "999021737477",
+    "project_id": "app-bibliodroid",
+    "storage_bucket": "app-bibliodroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999021737477:android:966be67d22116126fd8e6c",
+        "android_client_info": {
+          "package_name": "com.andrmatt.appbibliodroid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPEimoDjt_4GZBYzgbmjCqVJfAn_bd-UU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

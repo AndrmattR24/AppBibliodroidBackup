@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Bibliodroid</string>
+
+    <!--Global-->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+
+    <!--Splashscreen Activity-->
+    <string name="textLoad">Load Resources ...</string>
+
+    <!--Main Activity-->
+    <string name="textLogin">Login</string>
+    <string name="textRegister">Register</string>
+
+    <!--Login Activity-->
+    <string name="tv_subt_login">Please Login To Bibliodroid</string>
+    <string name="link_forgotpass_login">Forgot password?</string>
+    <string name="btn_login_login">LOGIN</string>
+    <string name="link_login_register">New user? sigUp</string>
+
+    <!--Register Activity-->
+    <string name="tv_subt_register">Create new Account</string>
+    <string name="btn_register_register">REGISTRO</string>
+
+    <!--DashboardUser Activity-->
+    <string name="tv_subt_dashboard_user">Dashboard User</string>
+    <string name="tv_email_example_dashboardUser">user@xample.com</string>
+
+</resources>
