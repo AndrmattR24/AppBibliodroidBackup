@@ -37,18 +37,11 @@ public class HistorialBooksActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvSearches);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        binding.enterSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(HistorialBooksActivity.this, "maldito chivo :v", Toast.LENGTH_SHORT).show();
-                return true;
-            }
+        // events
+        binding.enterSearch.setOnQueryTextListener(new SearchListener());
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
+        // room
+        showSearches();
     }
 
     private void showSearches() {
@@ -56,5 +49,19 @@ public class HistorialBooksActivity extends AppCompatActivity {
         listSearches.add(search);
         searchAdapter = new SearchAdpter(listSearches, getApplicationContext());
         recyclerView.setAdapter(searchAdapter);
+    }
+
+    private class SearchListener implements SearchView.OnQueryTextListener {
+
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            Toast.makeText(HistorialBooksActivity.this, "maldito chivo :v", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            return false;
+        }
     }
 }
