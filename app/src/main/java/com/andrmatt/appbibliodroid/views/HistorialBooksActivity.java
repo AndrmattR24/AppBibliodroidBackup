@@ -42,6 +42,7 @@ public class HistorialBooksActivity extends AppCompatActivity {
 
         // room
         showSearches();
+
     }
 
     private void showSearches() {

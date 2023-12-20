@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.andrmatt.appbibliodroid.R;
@@ -48,6 +50,14 @@ public class SearchAdpter extends RecyclerView.Adapter<SearchAdpter.ViewHolder> 
 
         public void bind(SearchEntity search) {
             this.binding.txtHBook.setText(search.getContent());
+
+
+            binding.touchDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Chivo eliminado", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }
