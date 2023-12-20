@@ -60,7 +60,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             @Override
             public void onClick(View v) {
                 searchRepository.deleteSearch(search.getId());
-                searchRepository.getSearches(search.getUserId());
+                listSearches.remove(search);
             }
         }
     }
