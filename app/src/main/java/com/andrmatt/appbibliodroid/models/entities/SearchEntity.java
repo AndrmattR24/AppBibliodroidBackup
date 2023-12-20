@@ -15,6 +15,9 @@ public class SearchEntity {
     @ColumnInfo(name = "content")
     private String content;
 
+    @ColumnInfo(name = "userId")
+    private String userId;
+
     public SearchEntity() {
         id = UUID.randomUUID().toString();
     }
@@ -35,4 +38,13 @@ public class SearchEntity {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }
+
